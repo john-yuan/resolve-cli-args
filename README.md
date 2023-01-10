@@ -57,3 +57,7 @@ console.log(resolveCliArgs([
 ```
 
 > Note: The string that starts with `"--"` or `"-"` will be treated as option name (not including the string that starts with `"---"`).
+
+## License
+
+[MIT](https://github.com/john-yuan/resolve-cli-args/blob/main/LICENSE)
