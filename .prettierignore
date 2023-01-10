@@ -1,0 +1,6 @@
+lib
+example/dist
+node_modules
+LICENSE
+pnpm-lock.yaml
+README.md

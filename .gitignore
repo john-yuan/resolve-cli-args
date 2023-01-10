@@ -1,0 +1,7 @@
+*.swp
+.DS_Store
+dist
+example/dist
+lib
+node_modules
+package-lock.json

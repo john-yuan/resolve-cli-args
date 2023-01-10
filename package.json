@@ -1,0 +1,44 @@
+{
+  "name": "resolve-cli-args",
+  "version": "0.0.1-alpha.1",
+  "description": "A simple function to resolve cli arguments.",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint --ext .js,.ts,.tsx ./src",
+    "lint:fix": "eslint --fix --ext .js,.ts,.tsx ./src",
+    "format": "prettier -u --write .",
+    "prepublishOnly": "tsc"
+  },
+  "keywords": [
+    "resolve",
+    "parse",
+    "cli",
+    "arguments"
+  ],
+  "devDependencies": {
+    "@eslint/create-config": "0.4.2",
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.48.0",
+    "@typescript-eslint/parser": "^5.48.0",
+    "eslint": "^8.31.0",
+    "eslint-config-prettier": "^8.6.0",
+    "prettier": "^2.8.2",
+    "typescript": "^4.9.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/john-yuan/resolve-cli-args.git"
+  },
+  "bugs": {
+    "url": "https://github.com/john-yuan/resolve-cli-args/issues"
+  },
+  "homepage": "https://github.com/john-yuan/resolve-cli-args#readme",
+  "author": "JOHN YUAN",
+  "license": "MIT"
+}
