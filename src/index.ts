@@ -41,39 +41,38 @@ export const resolveCliArgs = (argv: string[]): ResolvedCliArgs => {
     }
   }
 
-  const isOption = (value?: string): value is string => {
-    if (typeof value === 'string') {
-      if (value.startsWith('--')) {
-        return value.charAt(2) !== '-'
-      }
-      return value.startsWith('-')
+  const isOption = (value: string): value is string => {
+    if (value.startsWith('--')) {
+      return value.charAt(2) !== '-'
     }
-    return false
+    return value.startsWith('-')
   }
 
   while (list.length > 0) {
     const option = list.shift()
 
-    if (isOption(option)) {
-      if (option.includes('=')) {
-        const [name, ...values] = option.split('=')
-        setArg(name, values.join('='))
-      } else {
-        const value = list.shift()
-
-        if (value) {
-          if (isOption(value)) {
-            list.unshift(value)
-            setArg(option)
-          } else {
-            setArg(option, value)
-          }
+    if (option) {
+      if (isOption(option)) {
+        if (option.includes('=')) {
+          const [name, ...values] = option.split('=')
+          setArg(name, values.join('='))
         } else {
-          setArg(option)
+          const value = list.shift()
+
+          if (value) {
+            if (isOption(value)) {
+              list.unshift(value)
+              setArg(option)
+            } else {
+              setArg(option, value)
+            }
+          } else {
+            setArg(option)
+          }
         }
+      } else {
+        unnamedValues.push(option)
       }
-    } else if (option) {
-      unnamedValues.push(option)
     }
   }
 
