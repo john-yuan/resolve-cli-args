@@ -3,7 +3,7 @@
 [![npm version](https://img.shields.io/npm/v/resolve-cli-args)](https://www.npmjs.com/package/resolve-cli-args)
 [![install size](https://packagephobia.now.sh/badge?p=resolve-cli-args)](https://packagephobia.now.sh/result?p=resolve-cli-args)
 
-<!-- [![npm downloads](https://img.shields.io/npm/dm/resolve-cli-args.svg)](http://npm-stat.com/charts.html?package=resolve-cli-args) -->
+<!-- [![npm downloads](https://img.shields.io/npm/dm/resolve-cli-args.svg)](https://npm-stat.com/charts.html?package=resolve-cli-args) -->
 <!-- [![coverage](https://img.shields.io/badge/coverage-100%25-brightgreen)](https://github.com/john-yuan/resolve-cli-args/blob/main/src/index.test.ts) -->
 
 A simple function to resolve cli arguments.
