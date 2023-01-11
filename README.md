@@ -14,10 +14,22 @@ A simple function to resolve cli arguments.
 npm i resolve-cli-args
 ```
 
+## Usage
+
+```ts
+import { resolveCliArgs } from 'resolve-cli-args'
+
+const { args } = resolveCliArgs(process.argv.slice(2))
+
+if (args['--help'] || args['-h']) {
+  // print help message
+}
+```
+
 ## Examples
 
 ```ts
-import { resolveCliArgs } from './index'
+import { resolveCliArgs } from 'resolve-cli-args'
 
 console.log(resolveCliArgs([
   '--config', 'config.json', 'input.txt', 'output.txt'
