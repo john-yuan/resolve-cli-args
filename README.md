@@ -26,6 +26,24 @@ if (args['--help'] || args['-h']) {
 }
 ```
 
+The type of the return value is:
+
+```ts
+interface ResolvedCliArgs {
+  /**
+   * An object containing argument names and their values.
+   */
+  args: Record<string, string[] | undefined>
+
+  /**
+   * A list of values without option names.
+   */
+  unnamedValues: string[]
+}
+```
+
+> If the option do not have any values, the value of this option will be set to an empty array.
+
 ## Examples
 
 ```ts

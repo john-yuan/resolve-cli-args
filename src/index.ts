@@ -1,18 +1,11 @@
 export interface ResolvedCliArgs {
   /**
-   * An object contains the argument and its value (including the unknown arguments).
+   * An object containing argument names and their values.
    */
   args: Record<string, string[] | undefined>
 
   /**
-   * A list of values that do not have a option name. For example, given
-   * the following arguments:
-   *
-   * ```json
-   * ["style.css", "style.min.css", "--compress"]
-   * ```
-   *
-   * `style.css` and `style.min.css` will be put into `unnamedValues`.
+   * A list of values without option names.
    */
   unnamedValues: string[]
 }
