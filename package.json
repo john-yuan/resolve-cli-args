@@ -1,6 +1,6 @@
 {
   "name": "resolve-cli-args",
-  "version": "0.0.1-alpha.1",
+  "version": "1.0.0",
   "description": "A simple function to resolve cli arguments.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -10,7 +10,7 @@
     "LICENSE"
   ],
   "scripts": {
-    "test": "jest --collectCoverage ",
+    "test": "jest --collectCoverage",
     "build": "tsc",
     "lint": "eslint --ext .js,.ts,.tsx ./src",
     "lint:fix": "eslint --fix --ext .js,.ts,.tsx ./src",
