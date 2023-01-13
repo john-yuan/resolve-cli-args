@@ -90,6 +90,14 @@ console.log(resolveCliArgs([
   '--var=a=b', '--var', '---c=d'
 ]))
 // { args: { '--var': [ 'a=b', '---c=d' ] }, unnamedValues: [] }
+
+console.log(resolveCliArgs([
+  '--a=1', '--', '--c=d', '-e', 'f'
+]))
+// {
+//   args: { '--a': [ '1' ], '--': [ '--c=d', '-e', 'f' ] },
+//   unnamedValues: []
+// }
 ```
 
 > Note: The string that starts with `"--"` or `"-"` will be treated as option name (not including the string that starts with `"---"`).

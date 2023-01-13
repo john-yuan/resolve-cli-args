@@ -19,7 +19,7 @@ export interface ResolvedCliArgs {
 export const resolveCliArgs = (argv: string[]): ResolvedCliArgs => {
   const args: Record<string, string[] | undefined> = {}
   const unnamedValues: string[] = []
-  const list = [...argv]
+  const list = argv.slice(0)
 
   const setArg = (name: string, value?: string) => {
     let values = args[name]
@@ -45,7 +45,10 @@ export const resolveCliArgs = (argv: string[]): ResolvedCliArgs => {
     const option = list.shift()
 
     if (option) {
-      if (isOption(option)) {
+      if (option === '--') {
+        args['--'] = list
+        break
+      } else if (isOption(option)) {
         if (option.includes('=')) {
           const [name, ...values] = option.split('=')
           setArg(name, values.join('='))
