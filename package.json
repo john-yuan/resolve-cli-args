@@ -1,6 +1,6 @@
 {
   "name": "resolve-cli-args",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "A simple function to resolve cli arguments.",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
