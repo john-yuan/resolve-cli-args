@@ -29,7 +29,7 @@ if (args['--help'] || args['-h']) {
 The type of the return value is:
 
 ```ts
-interface ResolvedCliArgs {
+export interface ResolvedCliArgs {
   /**
    * An object containing argument names and their values.
    */
@@ -49,51 +49,44 @@ interface ResolvedCliArgs {
 ```ts
 import { resolveCliArgs } from 'resolve-cli-args'
 
-console.log(resolveCliArgs([
-  '--config', 'config.json', 'input.txt', 'output.txt'
-]))
+const print = (value: string) => {
+  const argv = value.split(' ')
+  const resolved = resolveCliArgs(argv)
+
+  console.log(resolved)
+}
+
+print('--config config.json input.txt output.txt')
 // {
 //   args: { '--config': [ 'config.json' ] },
-//   unnamedValues: [ 'input.txt', 'output.txt' ]
+//   unnamedValues: [ 'input`.txt', 'output.txt' ]
 // }
 
-console.log(resolveCliArgs([
-  '--log-level=2', '--type', 'typescript'
-]))
+print('--log-level=2 --type typescript')
 // {
 //   args: { '--log-level': [ '2' ], '--type': [ 'typescript' ] },
 //   unnamedValues: []
 // }
 
-console.log(resolveCliArgs([
-  '--compress', '-q'
-]))
+print('--compress -q')
 // { args: { '--compress': [], '-q': [] }, unnamedValues: [] }
 
-console.log(resolveCliArgs([
-  '--a', '1', 'a', '--b', '2', 'b', '--c=3', 'c'
-]))
+print('--a 1 a --b 2 b --c=3 c')
 // {
 //   args: { '--a': [ '1' ], '--b': [ '2' ], '--c': [ '3' ] },
 //   unnamedValues: [ 'a', 'b', 'c' ]
 // }
 
-console.log(resolveCliArgs([
-  '--ext=.js', '--ext=.ts', '--ext', '.jsx', '--ext', '.tsx'
-]))
+print('--ext=.js --ext=.ts --ext .jsx --ext .tsx')
 // {
 //   args: { '--ext': [ '.js', '.ts', '.jsx', '.tsx' ] },
 //   unnamedValues: []
 // }
 
-console.log(resolveCliArgs([
-  '--var=a=b', '--var', '---c=d'
-]))
+print('--var=a=b --var ---c=d')
 // { args: { '--var': [ 'a=b', '---c=d' ] }, unnamedValues: [] }
 
-console.log(resolveCliArgs([
-  '--a=1', '--', '--c=d', '-e', 'f'
-]))
+print('--a=1 -- --c=d -e f')
 // {
 //   args: { '--a': [ '1' ], '--': [ '--c=d', '-e', 'f' ] },
 //   unnamedValues: []
