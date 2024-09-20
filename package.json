@@ -43,6 +43,10 @@
   "bugs": {
     "url": "https://github.com/john-yuan/resolve-cli-args/issues"
   },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "homepage": "https://github.com/john-yuan/resolve-cli-args#readme",
   "author": "JOHN YUAN",
   "license": "MIT"
