@@ -49,15 +49,16 @@ it('should handle the values containing `---` or `=` correctly', () => {
 })
 
 it('should parse double dash (--) correctly', () => {
-  expect(resolveCliArgs(['--a=1', '-b=2', '--', 'c', '--d=4', '-e', '5']))
-    .toEqual({
-      args: {
-        '--a': ['1'],
-        '-b': ['2'],
-        '--': ['c', '--d=4', '-e', '5']
-      },
-      unnamedValues: []
-    })
+  expect(
+    resolveCliArgs(['--a=1', '-b=2', '--', 'c', '--d=4', '-e', '5'])
+  ).toEqual({
+    args: {
+      '--a': ['1'],
+      '-b': ['2'],
+      '--': ['c', '--d=4', '-e', '5']
+    },
+    unnamedValues: []
+  })
 })
 
 it('should not changed the argv argument', () => {

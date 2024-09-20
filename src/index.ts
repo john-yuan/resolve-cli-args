@@ -16,7 +16,7 @@ export interface ResolvedCliArgs {
  * @param argv The argument list to resolve
  * @returns Resolved cli arguments
  */
-export const resolveCliArgs = (argv: string[]): ResolvedCliArgs => {
+export function resolveCliArgs(argv: string[]): ResolvedCliArgs {
   const args: Record<string, string[] | undefined> = {}
   const unnamedValues: string[] = []
   const list = argv.slice(0)
