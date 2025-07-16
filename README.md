@@ -93,7 +93,7 @@ print('--a=1 -- --c=d -e f')
 // }
 ```
 
-> Note: A string that starts with "--" or "-" will be treated as an option name — except those that start with "---".
+A string that starts with `-` or `--` will be treated as an option name — except those that start with `---`.
 
 ## License
 
