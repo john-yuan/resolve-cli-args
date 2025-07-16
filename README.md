@@ -42,7 +42,7 @@ export interface ResolvedCliArgs {
 }
 ```
 
-> If the option do not have any values, the value of this option will be set to an empty array.
+**If an option does not have any values, its value will be set to an empty array.**
 
 ## Examples
 
@@ -59,7 +59,7 @@ const print = (value: string) => {
 print('--config config.json input.txt output.txt')
 // {
 //   args: { '--config': [ 'config.json' ] },
-//   unnamedValues: [ 'input`.txt', 'output.txt' ]
+//   unnamedValues: [ 'input.txt', 'output.txt' ]
 // }
 
 print('--log-level=2 --type typescript')
@@ -93,7 +93,7 @@ print('--a=1 -- --c=d -e f')
 // }
 ```
 
-> Note: The string that starts with `"--"` or `"-"` will be treated as option name (not including the string that starts with `"---"`).
+> Note: A string that starts with "--" or "-" will be treated as an option name — except those that start with "---".
 
 ## License
 
