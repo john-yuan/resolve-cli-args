@@ -42,7 +42,7 @@ export interface ResolvedCliArgs {
 }
 ```
 
-**If an option does not have any values, its value will be set to an empty array.**
+If an option does not have any values, its value will be set to an empty array.
 
 ## Examples
 
